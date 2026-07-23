@@ -57,28 +57,6 @@ jobs:
       - name: Check ecosystem caches
         timeout-minutes: 5
         run: pixi run check-caches
-      - name: Cache TinyTeX
-        uses: actions/cache@v4
-        with:
-          path: ~/.TinyTeX
-          # Refresh when the environment (incl. the pinned Quarto version) changes.
-          key: tinytex-${{ runner.os }}-${{ hashFiles('pixi.lock') }}
-          restore-keys: tinytex-${{ runner.os }}-
-      # Always run: `quarto install tinytex` detects an existing install (from the
-      # restored cache) and skips the download, so this is fast on a cache hit —
-      # while still registering TinyTeX (tlmgr PATH symlinks) so the PDF render
-      # finds it. Retried because the download is network-dependent.
-      - name: Install TinyTeX
-        timeout-minutes: 15
-        env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: |
-          for attempt in 1 2 3; do
-            pixi run tinytex-install && exit 0
-            echo "::warning::tinytex-install attempt $attempt failed; retrying in 15s"
-            sleep 15
-          done
-          echo "::error::tinytex-install failed after 3 attempts"; exit 1
       - name: Authenticate to Google Cloud
         if: ${{ env.GCP_WORKLOAD_IDENTITY_PROVIDER != '' }}
         uses: google-github-actions/auth@v3
