@@ -24,7 +24,6 @@ book:
   date: "1234-12-31"
   sidebar:
     collapse-level: 1
-  downloads: [pdf]
   chapters:
     - index.qmd
     - content/0.1_foreword.qmd
@@ -59,8 +58,6 @@ format:
   html:
     theme: cosmo
     css: styles.css
-  pdf:
-    documentclass: scrreprt
 
 show-instructions: true
 tbl-cap-location: top
