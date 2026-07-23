@@ -1,9 +1,9 @@
 country_name: Ruritania
 country_code: RU
 view_state:
-  longitude: 0.0
-  latitude: 0.0
-  zoom: 11
+  longitude: -72.91
+  latitude: 4.1
+  zoom: 5
 ecosystem_source:
   data: https://storage.googleapis.com/rle_test_data/null_island.geojson
   ecosystem_name_column: ECO_NAME
