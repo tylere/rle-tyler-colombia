@@ -18,13 +18,17 @@
 // origin); the inner import is a CORS module fetch esm.sh allows, and the
 // worker's own dependency tree resolves against its esm.sh URL.
 
+// The ?deps= pin keeps every module on ONE deck.gl/luma.gl version. Without it,
+// deck.gl-geotiff's `^9.4.0` floats to the next deck.gl minor (and its luma.gl)
+// while @deck.gl/mapbox's `~9.4.0` does not, and luma.gl throws "multiple
+// versions detected".
 import maplibregl from "https://esm.sh/maplibre-gl@4.7.1";
-import { MapboxOverlay } from "https://esm.sh/@deck.gl/mapbox@9.3.0";
-import { COGLayer } from "https://esm.sh/@developmentseed/deck.gl-geotiff@0.7.0";
-import { DecoderPool, GeoTIFF } from "https://esm.sh/@developmentseed/geotiff@0.7.0";
+import { MapboxOverlay } from "https://esm.sh/@deck.gl/mapbox@9.4.0?deps=@deck.gl/core@9.4.0,@deck.gl/layers@9.4.0,@deck.gl/geo-layers@9.4.0,@deck.gl/mesh-layers@9.4.0,@luma.gl/core@9.4.2,@luma.gl/engine@9.4.2,@luma.gl/webgl@9.4.2,@luma.gl/shadertools@9.4.2,@luma.gl/gpgpu@9.4.2";
+import { COGLayer } from "https://esm.sh/@developmentseed/deck.gl-geotiff@0.8.1?deps=@deck.gl/core@9.4.0,@deck.gl/layers@9.4.0,@deck.gl/geo-layers@9.4.0,@deck.gl/mesh-layers@9.4.0,@luma.gl/core@9.4.2,@luma.gl/engine@9.4.2,@luma.gl/webgl@9.4.2,@luma.gl/shadertools@9.4.2,@luma.gl/gpgpu@9.4.2";
+import { DecoderPool, GeoTIFF } from "https://esm.sh/@developmentseed/geotiff@0.8.1";
 
 const MAPLIBRE_CSS_URL = "https://unpkg.com/maplibre-gl@4.7.1/dist/maplibre-gl.css";
-const GEOTIFF_WORKER_URL = "https://esm.sh/@developmentseed/geotiff@0.7.0/pool/worker";
+const GEOTIFF_WORKER_URL = "https://esm.sh/@developmentseed/geotiff@0.8.1/pool/worker";
 const BASEMAP_STYLE = "https://basemaps.cartocdn.com/gl/positron-gl-style/style.json";
 
 // Highlight palette (straight-alpha RGBA, 0..255).
@@ -120,8 +124,8 @@ function makeGetTileData(index) {
       const v = src[i];
       const o = i * 4;
       let c;
-      if (v === NODATA) {
-        continue; // leave (0,0,0,0) → discarded in shader
+      if (v === NODATA || v === 0) {
+        continue; // 0 = no-ecosystem background; 255 = nodata → both transparent
       } else if (v === highlightVal) {
         c = HIGHLIGHT;
       } else {
@@ -265,9 +269,17 @@ export default async function mount(el, opts) {
       getTileData: palette ? makeGetTileDataCategorical(palette) : makeGetTileData(index),
       renderTile,
       onGeoTIFFLoad: (_geotiff, options) => {
-        const b = options.geographicBounds;
-        if (Number.isFinite(b.west) && Number.isFinite(b.east) && b.east > b.west) {
-          map.fitBounds([[b.west, b.south], [b.east, b.north]], { padding: 20, duration: 0 });
+        try {
+          const b = options?.geographicBounds;
+          if (b &&
+              Number.isFinite(b.west) && Number.isFinite(b.east) &&
+              Number.isFinite(b.south) && Number.isFinite(b.north) &&
+              b.east > b.west) {
+            map.fitBounds([[b.west, b.south], [b.east, b.north]], { padding: 20, duration: 0 });
+          }
+        } catch (e) {
+          showError("Bounds error: " + (e?.message ?? String(e)));
+          return;
         }
         status.remove();
       },
