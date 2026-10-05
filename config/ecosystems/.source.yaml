@@ -1,0 +1,4 @@
+data: https://storage.googleapis.com/rle-tyler-rle-cogs/ecosystems/ECOSISTEMAS_MEC_122024.parquet
+ecosystem_name_column: ecos_general
+optimized_data: gs://rle-tyler-rle-cogs/ecosystems/ECOSISTEMAS_MEC_122024.parquet
+aoo_grid_cache_url: gs://rle-tyler-rle-cogs/cache/ECOSISTEMAS_MEC_122024_aoo_grid.parquet
