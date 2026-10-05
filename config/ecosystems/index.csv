@@ -1,0 +1,88 @@
+index,code,name
+1,Agroecosistema Arrocero,Agroecosistema Arrocero
+2,Agroecosistema Cafetero,Agroecosistema Cafetero
+3,Agroecosistema Cañero,Agroecosistema Cañero
+4,Agroecosistema de Cultivos Permanentes,Agroecosistema de Cultivos Permanentes
+5,Agroecosistema de Cultivos Transitorios,Agroecosistema de Cultivos Transitorios
+6,Agroecosistema de Mosaico de Cultivos y Espacios Naturales,Agroecosistema de Mosaico de Cultivos y Espacios Naturales
+7,Agroecosistema de Mosaico de Cultivos y Pastos,Agroecosistema de Mosaico de Cultivos y Pastos
+8,"Agroecosistema de Mosaico de Cultivos, Pastos y Espacios Naturales","Agroecosistema de Mosaico de Cultivos, Pastos y Espacios Naturales"
+9,Agroecosistema de Mosaico de Pastos y Espacios Naturales,Agroecosistema de Mosaico de Pastos y Espacios Naturales
+10,Agroecosistema Forestal,Agroecosistema Forestal
+11,Agroecosistema Ganadero,Agroecosistema Ganadero
+12,Agroecosistema Palmero,Agroecosistema Palmero
+13,Agroecosistema Papero,Agroecosistema Papero
+14,Agroecosistema Platanero y Bananero,Agroecosistema Platanero y Bananero
+15,Arbustal Andino Humedo,Arbustal Andino Humedo
+16,Arbustal Basal Humedo,Arbustal Basal Humedo
+17,Arbustal Inundable Andino,Arbustal Inundable Andino
+18,Arbustal Inundable Basal,Arbustal Inundable Basal
+19,Arbustal Inundable Costero,Arbustal Inundable Costero
+20,Arbustal Inundable Subandino,Arbustal Inundable Subandino
+21,Arbustal Subandino Humedo,Arbustal Subandino Humedo
+22,Bosque Andino Humedo,Bosque Andino Humedo
+23,Bosque Andino Seco,Bosque Andino Seco
+24,Bosque Basal Humedo,Bosque Basal Humedo
+25,Bosque Basal Seco,Bosque Basal Seco
+26,Bosque de Galeria Basal Humedo,Bosque de Galeria Basal Humedo
+27,Bosque de Galeria Basal Seco,Bosque de Galeria Basal Seco
+28,Bosque de Galeria Inundable Basal,Bosque de Galeria Inundable Basal
+29,Bosque de Galeria Inundable Costero,Bosque de Galeria Inundable Costero
+30,Bosque Fragmentado con Pastos y Cultivos,Bosque Fragmentado con Pastos y Cultivos
+31,Bosque Fragmentado con Vegetacion Secundaria,Bosque Fragmentado con Vegetacion Secundaria
+32,Bosque Inundable Andino,Bosque Inundable Andino
+33,Bosque Inundable Basal,Bosque Inundable Basal
+34,Bosque Inundable Costero,Bosque Inundable Costero
+35,Bosque Inundable Subandino,Bosque Inundable Subandino
+36,Bosque Ripario Inundable Subandino,Bosque Ripario Inundable Subandino
+37,Bosque Subandino Humedo,Bosque Subandino Humedo
+38,Bosque Subandino Seco,Bosque Subandino Seco
+39,Complejos Rocosos Andinos,Complejos Rocosos Andinos
+40,Complejos Rocosos de Serranias,Complejos Rocosos de Serranias
+41,Coralino Continental,Coralino Continental
+42,Coralino Oceanico,Coralino Oceanico
+43,Cuerpo de Agua Artificial,Cuerpo de Agua Artificial
+44,Desierto,Desierto
+45,Fondos Blandos,Fondos Blandos
+46,Fondos Blandos con Vegetacion No Vascular,Fondos Blandos con Vegetacion No Vascular
+47,Fondos Duros con Vegetacion No Vascular,Fondos Duros con Vegetacion No Vascular
+48,Fondos Duros No Coralinos,Fondos Duros No Coralinos
+49,Glaciares y Nivales,Glaciares y Nivales
+50,Herbazal Andino Humedo,Herbazal Andino Humedo
+51,Herbazal Basal Humedo,Herbazal Basal Humedo
+52,Herbazal Inundable Andino,Herbazal Inundable Andino
+53,Herbazal Inundable Basal,Herbazal Inundable Basal
+54,Herbazal Inundable Costero,Herbazal Inundable Costero
+55,Herbazal Inundable Subandino,Herbazal Inundable Subandino
+56,Herbazal Subandino Humedo,Herbazal Subandino Humedo
+57,Laguna Aluvial,Laguna Aluvial
+58,Laguna Costera,Laguna Costera
+59,Laguna Glacial,Laguna Glacial
+60,Laguna Tectonica,Laguna Tectonica
+61,Llanura Mareal,Llanura Mareal
+62,Manglar,Manglar
+63,Paramo,Paramo
+64,Playas Costeras,Playas Costeras
+65,Pradera de Pastos Marinos,Pradera de Pastos Marinos
+66,Rio de Aguas Blancas,Rio de Aguas Blancas
+67,Rio de Aguas Claras,Rio de Aguas Claras
+68,Rio de Aguas Negras,Rio de Aguas Negras
+69,Sabana Estacional,Sabana Estacional
+70,Sabana Inundable,Sabana Inundable
+71,Subxerofitia Andina,Subxerofitia Andina
+72,Subxerofitia Basal,Subxerofitia Basal
+73,Subxerofitia Subandina,Subxerofitia Subandina
+74,Territorio Artificializado,Territorio Artificializado
+75,Transicional Transformado,Transicional Transformado
+76,Transicional Transformado Costero,Transicional Transformado Costero
+77,Turbera Andina,Turbera Andina
+78,Turbera de Paramo,Turbera de Paramo
+79,Vegetación Secundaria,Vegetación Secundaria
+80,Xerofitia Arida,Xerofitia Arida
+81,Xerofitia Desertica,Xerofitia Desertica
+82,Zona Pantanosa Andina,Zona Pantanosa Andina
+83,Zona Pantanosa Basal,Zona Pantanosa Basal
+84,Zona Pantanosa Subandina,Zona Pantanosa Subandina
+85,Zonas Arenosas Naturales,Zonas Arenosas Naturales
+86,Zonas Pantanosas Costeras,Zonas Pantanosas Costeras
+87,Zonas Pantanosas Salinas,Zonas Pantanosas Salinas
